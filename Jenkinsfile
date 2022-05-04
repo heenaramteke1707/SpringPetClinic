@@ -20,11 +20,13 @@ pipeline{
         stage('package'){
             steps{
                 sh 'mvn package'
+                sh 'pwd'
             }
         }
+        
         stage('Deployement'){
             steps{
-                sh 'java -jar /usr/share/jenkins/workspace/PetclinicDeclarativePipeline/target/*.jar' 
+                sh 'java -jar /var/lib/jenkins/workspace/PetClinicDeclarativePipeline/target/*.jar' 
             }
         }
     }
